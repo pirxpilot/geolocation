@@ -9,6 +9,8 @@
 
     $ component install code42day/geolocation
 
+  Live demo is [here](http://code42day.github.io/geolocation/).
+
 ## API
 
 ### get

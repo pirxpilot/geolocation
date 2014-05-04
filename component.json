@@ -10,7 +10,9 @@
   "dependencies": {
     "component/emitter": "*"
   },
-  "development": {},
+  "development": {
+    "yields/ago": "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [

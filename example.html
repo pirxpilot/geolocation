@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+      body {
+        padding: 2em;
+      }
+      label {
+        font-weight: bold;
+        margin-right: 1em;
+      }
+      .error {
+        color: #FF4136;
+      }
+    </style>
+    <script src="build/build.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>
+        <label>Position</label>
+        <span class="latitude"></span>&nbsp;<span class="longitude"></span>
+      </p>
+      <p>
+        <label>Valid</label>
+        <span class="ago">never</span>
+      </p>
+      <p>
+        <label>Accuracy</label>
+        <span class="accuracy"></span>
+      </p>
+      <p>
+        <label>Altitude</label>
+        <span class="altitude"></span>
+      </p>
+      <p>
+        <label>Altitude Accuracy</label>
+        <span class="altitudeAccuracy"></span>
+      </p>
+      <p>
+        <label>Heading</label>
+        <span class="heading"></span>
+      </p>
+      <p>
+        <label>Speed</label>
+        <span class="speed"></span>
+      </p>
+    </div>
+    <div><span class="error">Waiting for location...</span></div>
+    <script>
+      var geolocation = require('geolocation');
+      var ago = require('ago');
+
+      geolocation()
+        .on('position', onPosition)
+        .on('error', onError)
+        .watch();
+
+
+      function text(selector, value) {
+        document.querySelector(selector).textContent = value || '';
+      }
+
+      function onPosition(p) {
+        var props = [
+          'latitude',
+          'longitude',
+          'altitude',
+          'accuracy',
+          'altitudeAccuracy',
+          'heading',
+          'speed'
+        ];
+        props.forEach(function(prop) {
+          text('.' + prop, p.coords[prop]);
+        });
+        text('.ago', ago(new Date(p.timestamp)));
+        text('.error');
+      }
+
+      function onError(e) {
+        text('.error', e.message);
+      }
+
+    </script>
+  </body>
+</html>
