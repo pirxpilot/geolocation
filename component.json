@@ -1,0 +1,19 @@
+{
+  "name": "geolocation",
+  "repo": "code42day/geolocation",
+  "description": "Flex API for HTML5 geolocation.",
+  "version": "0.0.0",
+  "keywords": [
+    "geo",
+    "position"
+  ],
+  "dependencies": {
+    "component/emitter": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
