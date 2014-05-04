@@ -2,7 +2,7 @@
   "name": "geolocation",
   "repo": "code42day/geolocation",
   "description": "Flex API for HTML5 geolocation.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [
     "geo",
     "position"
