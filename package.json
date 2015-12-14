@@ -1,0 +1,31 @@
+{
+  "name": "code42day-geolocation",
+  "version": "0.1.0",
+  "description": "Flex API for HTML5 geolocation.",
+  "scripts": {
+    "test": "make check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code42day/geolocation.git"
+  },
+  "keywords": [
+    "browser",
+    "geo",
+    "position"
+  ],
+  "dependencies": {
+    "component-emitter": "~1"
+  },
+  "browser": {
+    "emitter": "component-emitter"
+  },
+  "author": "Damian Krzeminski <pirxpilot@code42day.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code42day/geolocation/issues"
+  },
+  "files": [
+    "index.js"
+  ]
+}

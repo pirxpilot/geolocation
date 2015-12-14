@@ -1,15 +1,28 @@
-all: lint build
+PROJECT=geolocation
+
+all: check compile
+
+check: lint
 
 lint:
 	jshint index.js
 
-build: components index.js
-	@component build --dev
+compile: build/build.js
 
-components: component.json
-	@component install --dev
+
+build:
+	mkdir -p build
+
+build/build.js: node_modules index.js | build
+	browserify --require ./index.js:$(PROJECT) --outfile $@
+
+node_modules: package.json
+	npm install
 
 clean:
-	rm -fr build components
+	rm -fr build
 
-.PHONY: clean lint all
+distclean: clean
+	rm -fr node_modules
+
+.PHONY: clean lint check all compile
