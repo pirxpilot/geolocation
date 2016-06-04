@@ -5,11 +5,11 @@
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
+  Install with [npm(1)](https://npmjs.com):
 
-    $ component install code42day/geolocation
+    $ npm install -S code42day-geolocation
 
-  Live demo is [here](http://code42day.github.io/geolocation/).
+  Live demo is [here](https://code42day.github.io/geolocation/).
 
 ## API
 
