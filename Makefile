@@ -1,3 +1,4 @@
+NODE_BIN=./node_modules/.bin
 PROJECT=geolocation
 
 all: check compile
@@ -5,10 +6,9 @@ all: check compile
 check: lint
 
 lint:
-	jshint index.js
+	$(NODE_BIN)/jshint index.js
 
 compile: build/build.js
-
 
 build:
 	mkdir -p build
@@ -17,7 +17,7 @@ build/build.js: node_modules index.js | build
 	browserify --require ./index.js:$(PROJECT) --outfile $@
 
 node_modules: package.json
-	npm install
+	npm install && touch $@
 
 clean:
 	rm -fr build
@@ -25,4 +25,4 @@ clean:
 distclean: clean
 	rm -fr node_modules
 
-.PHONY: clean lint check all compile
+.PHONY: clean distclean lint check all compile

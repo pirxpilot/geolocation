@@ -27,5 +27,8 @@
   },
   "files": [
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "jshint": "~2"
+  }
 }
