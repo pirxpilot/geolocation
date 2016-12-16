@@ -1,3 +1,6 @@
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 # geolocation
 
@@ -70,7 +73,7 @@ Clears any watch in progress. Safe to call if watch is not in progress.
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 code42day
+  Copyright (c) 2014 [code42day]
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -89,3 +92,14 @@ Clears any watch in progress. Safe to call if watch is not in progress.
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
+
+[code42day]: http://code42day.com
+
+[npm-image]: https://img.shields.io/npm/v/code42day-geolocation.svg
+[npm-url]: https://npmjs.org/package/code42day-geolocation
+
+[travis-url]: https://travis-ci.org/code42day/geolocation
+[travis-image]: https://img.shields.io/travis/code42day/geolocation.svg
+
+[gemnasium-image]: https://img.shields.io/gemnasium/code42day/geolocation.svg
+[gemnasium-url]: https://gemnasium.com/code42day/geolocation
