@@ -10,9 +10,9 @@
 
   Install with [npm(1)](https://npmjs.com):
 
-    $ npm install -S code42day-geolocation
+    $ npm install -S html5-geolocation
 
-  Live demo is [here](https://code42day.github.io/geolocation/).
+  Live demo is [here](https://pirxpilot.github.io/geolocation/).
 
 ## API
 
@@ -73,7 +73,7 @@ Clears any watch in progress. Safe to call if watch is not in progress.
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 [code42day]
+  Copyright (c) 2014 [Damian Krzeminski](https://pirxpilot.me)
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -93,13 +93,11 @@ Clears any watch in progress. Safe to call if watch is not in progress.
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 
-[code42day]: http://code42day.com
+[npm-image]: https://img.shields.io/npm/v/html5-geolocation.svg
+[npm-url]: https://npmjs.org/package/html5-geolocation
 
-[npm-image]: https://img.shields.io/npm/v/code42day-geolocation.svg
-[npm-url]: https://npmjs.org/package/code42day-geolocation
+[travis-url]: https://travis-ci.org/pirxpilot/geolocation
+[travis-image]: https://img.shields.io/travis/pirxpilot/geolocation.svg
 
-[travis-url]: https://travis-ci.org/code42day/geolocation
-[travis-image]: https://img.shields.io/travis/code42day/geolocation.svg
-
-[gemnasium-image]: https://img.shields.io/gemnasium/code42day/geolocation.svg
-[gemnasium-url]: https://gemnasium.com/code42day/geolocation
+[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/geolocation.svg
+[gemnasium-url]: https://gemnasium.com/pirxpilot/geolocation
