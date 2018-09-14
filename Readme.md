@@ -1,6 +1,6 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
+[![Dependency Status][deps-image]][deps-url]
 
 # geolocation
 
@@ -99,5 +99,5 @@ Clears any watch in progress. Safe to call if watch is not in progress.
 [travis-url]: https://travis-ci.org/pirxpilot/geolocation
 [travis-image]: https://img.shields.io/travis/pirxpilot/geolocation.svg
 
-[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/geolocation.svg
-[gemnasium-url]: https://gemnasium.com/pirxpilot/geolocation
+[deps-image]: https://img.shields.io/david/pirxpilot/geolocation.svg
+[deps-url]: https://david-dm.org/pirxpilot/geolocation
