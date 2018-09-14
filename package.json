@@ -1,6 +1,6 @@
 {
   "name": "html5-geolocation",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Flex API for HTML5 geolocation.",
   "scripts": {
     "test": "make check"
