@@ -17,9 +17,6 @@
   "dependencies": {
     "component-emitter": "~1"
   },
-  "browser": {
-    "emitter": "component-emitter"
-  },
   "author": "Damian Krzeminski <pirxpilot@furkot.com>",
   "license": "MIT",
   "files": [
