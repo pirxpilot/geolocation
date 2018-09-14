@@ -1,25 +1,33 @@
-var Emitter = require('emitter');
+const Emitter = require('component-emitter');
 
 module.exports = tracker;
 
 function noop() {}
 
-var dummyGeolocation = {
-  clearPosition: noop,
+const dummyGeolocation = {
+  watchPosition: noop,
   getCurrentPosition: noop,
   clearWatch: noop
 };
 
 function tracker() {
+  const options = {
+    enableHighAccuracy: true,  // use GPS if available
+    maximumAge: 60000, // 60 seconds
+    timeout: 30000  // 30 seconds
+  };
 
-  var self,
-    geolocation,
-    watcher,
-    options = {
-      enableHighAccuracy: true,  // use GPS if available
-      maximumAge: 60000, // 60 seconds
-      timeout: 30000  // 30 seconds
-    };
+  const self = {
+    get,
+    watch,
+    clear,
+    timeout,
+    maximumAge,
+    highAccuracy
+  };
+
+  const geolocation = 'geolocation' in navigator ? navigator.geolocation: dummyGeolocation;
+  let watcher;
 
   function timeout(t) {
     options.timeout = t;
@@ -37,21 +45,21 @@ function tracker() {
   }
 
   function get(fn) {
-    geolocation.getCurrentPosition(function success(position) {
-      fn(null, position);
-    }, function error(e) {
-      fn(e);
-    }, options);
+    geolocation.getCurrentPosition(
+      position => fn(null, position),
+      e => fn(e),
+      options
+    );
     return self;
   }
 
   function watch() {
     clear();
-    watcher = geolocation.watchPosition(function success(position) {
-      self.emit('position', position);
-    }, function error(e) {
-      self.emit('error', e);
-    }, options);
+    watcher = geolocation.watchPosition(
+      position => self.emit('position', position),
+      e => self.emit('error', e),
+      options
+    );
     return self;
   }
 
@@ -62,21 +70,6 @@ function tracker() {
     }
     return self;
   }
-
-  if ('geolocation' in navigator) {
-    geolocation = navigator.geolocation;
-  } else {
-    geolocation = dummyGeolocation;
-  }
-
-  self = {
-    get: get,
-    watch: watch,
-    clear: clear,
-    timeout: timeout,
-    maximumAge: maximumAge,
-    highAccuracy: highAccuracy
-  };
 
   return Emitter(self);
 }

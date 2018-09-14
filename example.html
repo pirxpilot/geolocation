@@ -51,13 +51,11 @@
     <div><span class="error">Waiting for location...</span></div>
     <script>
       var geolocation = require('geolocation');
-      var ago = require('ago');
 
       geolocation()
         .on('position', onPosition)
         .on('error', onError)
         .watch();
-
 
       function text(selector, value) {
         document.querySelector(selector).textContent = value || '';
@@ -76,7 +74,7 @@
         props.forEach(function(prop) {
           text('.' + prop, p.coords[prop]);
         });
-        text('.ago', ago(new Date(p.timestamp)));
+        text('.ago', Date.now() - p.timestamp);
         text('.error');
       }
 

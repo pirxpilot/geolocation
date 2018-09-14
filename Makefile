@@ -14,7 +14,7 @@ build:
 	mkdir -p build
 
 build/build.js: node_modules index.js | build
-	browserify --require ./index.js:$(PROJECT) --outfile $@
+	browserify --debug --require ./index.js:$(PROJECT) --outfile $@
 
 node_modules: package.json
 	npm install && touch $@
