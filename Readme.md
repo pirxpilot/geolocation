@@ -1,5 +1,5 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
 
 # geolocation
@@ -93,11 +93,11 @@ Clears any watch in progress. Safe to call if watch is not in progress.
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 
-[npm-image]: https://img.shields.io/npm/v/html5-geolocation.svg
+[npm-image]: https://img.shields.io/npm/v/html5-geolocation
 [npm-url]: https://npmjs.org/package/html5-geolocation
 
-[travis-url]: https://travis-ci.org/pirxpilot/geolocation
-[travis-image]: https://img.shields.io/travis/pirxpilot/geolocation.svg
+[build-url]: https://github.com/pirxpilot/geolocation/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/geolocation/check.yaml?branch=main
 
-[deps-image]: https://img.shields.io/david/pirxpilot/geolocation.svg
-[deps-url]: https://david-dm.org/pirxpilot/geolocation
+[deps-image]: https://img.shields.io/librariesio/release/npm/html5-geolocation
+[deps-url]: https://libraries.io/npm/html5-geolocation
