@@ -1,4 +1,11 @@
 
+3.0.0 / 2025-06-04
+==================
+
+ * replace Travis CI with github actions
+ * transition to ESM format
+ * use `biome` as a linter and formatter
+
 2.0.0 / 2018-09-13
 ==================
 
