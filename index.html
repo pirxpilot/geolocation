@@ -20,6 +20,9 @@
   <body>
     <div>
       <p>
+        <button onclick="javascript:locate()">Locate</button>
+      </p>
+      <p>
         <label>Position</label>
         <span class="latitude"></span>&nbsp;<span class="longitude"></span>
       </p>
@@ -50,21 +53,23 @@
     </div>
     <div><span class="error">Waiting for location...</span></div>
     <script>
-      var geolocation = require('geolocation');
-      var ago = require('ago');
+      geolocation = geolocation.default;
+      let tracker;
 
-      geolocation()
-        .on('position', onPosition)
-        .on('error', onError)
-        .watch();
-
+      function locate() {
+        tracker?.clear();
+        tracker ??= geolocation()
+          .on('position', onPosition)
+          .on('error', onError);
+        tracker.watch();
+      }
 
       function text(selector, value) {
-        document.querySelector(selector).textContent = value || '';
+        document.querySelector(selector).textContent = value ?? '';
       }
 
       function onPosition(p) {
-        var props = [
+        [
           'latitude',
           'longitude',
           'altitude',
@@ -72,18 +77,14 @@
           'altitudeAccuracy',
           'heading',
           'speed'
-        ];
-        props.forEach(function(prop) {
-          text('.' + prop, p.coords[prop]);
-        });
-        text('.ago', ago(new Date(p.timestamp)));
+        ].forEach(prop => text('.' + prop, p.coords[prop]));
+        text('.ago', Date.now() - p.timestamp);
         text('.error');
       }
 
       function onError(e) {
         text('.error', e.message);
       }
-
     </script>
   </body>
 </html>
