@@ -2,6 +2,8 @@
   "name": "html5-geolocation",
   "version": "2.0.0",
   "description": "Flex API for HTML5 geolocation.",
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
     "test": "make check"
   },
@@ -16,7 +18,7 @@
     "position"
   ],
   "dependencies": {
-    "component-emitter": "~1"
+    "component-emitter": "~2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

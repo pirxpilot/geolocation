@@ -1,6 +1,4 @@
-const Emitter = require('component-emitter');
-
-module.exports = tracker;
+import Emitter from 'component-emitter';
 
 function noop() {}
 
@@ -10,7 +8,7 @@ const dummyGeolocation = {
   clearWatch: noop
 };
 
-function tracker() {
+export default function tracker() {
   const options = {
     enableHighAccuracy: true, // use GPS if available
     maximumAge: 60000, // 60 seconds
