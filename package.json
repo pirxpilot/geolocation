@@ -5,9 +5,10 @@
   "scripts": {
     "test": "make check"
   },
+  "author": "Damian Krzeminski <pirxpilot@furkot.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pirxpilot/geolocation.git"
+    "url": "git+https://github.com/pirxpilot/geolocation.git"
   },
   "keywords": [
     "browser",
@@ -17,12 +18,12 @@
   "dependencies": {
     "component-emitter": "~1"
   },
-  "author": "Damian Krzeminski <pirxpilot@furkot.com>",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "esbuild": "^0.25.5"
+  },
   "license": "MIT",
   "files": [
     "index.js"
-  ],
-  "devDependencies": {
-    "jshint": "~2"
-  }
+  ]
 }

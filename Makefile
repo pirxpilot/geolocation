@@ -1,4 +1,4 @@
-NODE_BIN=./node_modules/.bin
+NODE_BIN=node_modules/.bin
 PROJECT=geolocation
 
 all: check compile
@@ -6,23 +6,30 @@ all: check compile
 check: lint
 
 lint:
-	$(NODE_BIN)/jshint index.js
+	$(NODE_BIN)/biome ci
+
+format:
+	$(NODE_BIN)/biome check --fix
 
 compile: build/build.js
 
 build:
-	mkdir -p build
+	mkdir -p $@
 
 build/build.js: node_modules index.js | build
-	browserify --debug --require ./index.js:$(PROJECT) --outfile $@
+	$(NODE_BIN)/esbuild \
+		--bundle \
+		--sourcemap \
+		--define:DEBUG="true" \
+		--global-name=$(PROJECT) \
+		--outfile=$@ \
+		index.js
 
 node_modules: package.json
-	npm install && touch $@
+	yarn
+	touch $@
 
 clean:
-	rm -fr build
+	rm -fr build node_modules
 
-distclean: clean
-	rm -fr node_modules
-
-.PHONY: clean distclean lint check all compile
+.PHONY: clean lint check all build

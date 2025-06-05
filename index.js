@@ -12,9 +12,9 @@ const dummyGeolocation = {
 
 function tracker() {
   const options = {
-    enableHighAccuracy: true,  // use GPS if available
+    enableHighAccuracy: true, // use GPS if available
     maximumAge: 60000, // 60 seconds
-    timeout: 30000  // 30 seconds
+    timeout: 30000 // 30 seconds
   };
 
   const self = {
@@ -26,8 +26,10 @@ function tracker() {
     highAccuracy
   };
 
-  const geolocation = 'geolocation' in navigator ? navigator.geolocation: dummyGeolocation;
+  const geolocation = 'geolocation' in navigator ? navigator.geolocation : dummyGeolocation;
   let watcher;
+
+  return Emitter(self);
 
   function timeout(t) {
     options.timeout = t;
@@ -70,6 +72,4 @@ function tracker() {
     }
     return self;
   }
-
-  return Emitter(self);
 }

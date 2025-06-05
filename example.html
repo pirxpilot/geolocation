@@ -48,14 +48,15 @@
         <span class="speed"></span>
       </p>
     </div>
+    <button id="start-button" onclick="javascript:locate()">Locate</button>
     <div><span class="error">Waiting for location...</span></div>
     <script>
-      var geolocation = require('geolocation');
-
-      geolocation()
-        .on('position', onPosition)
-        .on('error', onError)
-        .watch();
+      function locate() {
+        geolocation()
+          .on('position', onPosition)
+          .on('error', onError)
+          .watch();
+      }
 
       function text(selector, value) {
         document.querySelector(selector).textContent = value || '';
@@ -81,7 +82,6 @@
       function onError(e) {
         text('.error', e.message);
       }
-
     </script>
   </body>
 </html>
